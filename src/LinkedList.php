@@ -177,7 +177,8 @@ class LinkedList {
         } 
     }
 
-    public function reverse() {  
+    public function reverse() 
+    {  
         if ($this->firstNode !== NULL) {
             if ($this->firstNode->next !== NULL) {
                 $reversedList = null;
@@ -192,6 +193,25 @@ class LinkedList {
                 $this->firstNode = $reversedList;
             }  
         }  
+    }
+
+    public function getCount()
+    {
+        $count = 0;
+        if($this->firstNode !== null) {
+            $currentNode = $this->firstNode;
+
+            while($currentNode !== null) {
+                $currentNode = $currentNode->next;
+                $count++;
+            }
+            return $count;
+        }
+    }
+
+    public function isEmpty()
+    {
+        return $this->firstNode === null;
     }
 }
 
